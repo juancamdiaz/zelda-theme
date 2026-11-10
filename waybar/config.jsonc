@@ -1,0 +1,241 @@
+[
+  // ------ BARRA PRINCIPAL (DP-1) ------
+  {
+    "output": [
+      "DP-1"
+    ],
+    "layer": "top",
+    "position": "top",
+    "height": 20,
+    "reload_style_on_change": true,
+    "modules-left": [
+      "hyprland/workspaces",
+      "hyprland/window"
+    ],
+    "modules-center": [
+      "clock"
+    ],
+    "modules-right": [
+      "mpris",
+      "custom/bar",
+      "pulseaudio",
+      "custom/bar",
+      "group/hardware",
+      "custom/bar",
+      "tray",
+      "custom/bar",
+      "custom/notification"
+    ],
+    "group/hardware": {
+      "orientation": "horizontal",
+      "modules": [
+        "network",
+        "custom/bar",
+        "network#vpn",
+        "cpu",
+        "memory"
+      ]
+    },
+    // --- Módulos Barra Principal ---
+    "hyprland/workspaces": {
+      "format": " {name} ",
+      "persistent-workspaces": {
+        /*"*": [2,3,4,5,6,7],*/
+        "DP-1": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    "clock": {
+      "format": "{:%H:%M}",
+      "format-alt": "{:%A, %B %d, %Y (%R)} 󰃰 ",
+      "tooltip-format": "<tt><small>{calendar}</small></tt>",
+      "calendar": {
+        "mode": "year",
+        "mode-mon-col": 3,
+        "weeks-pos": "right",
+        "on-scroll": 1,
+        "on-click-right": "mode",
+        "format": {
+          "months": "<b>{}</b>",
+          "days": "{}",
+          "weeks": "<b>W{}</b>",
+          "weekdays": "<b>{}</b>",
+          "today": "<b><u>{}</u></b>"
+        }
+      },
+      "actions": {
+        "on-click-right": "mode",
+        "on-click-forward": "tz_up",
+        "on-click-backward": "tz_down",
+        "on-scroll-up": "shift_up",
+        "on-scroll-down": "shift_down"
+      }
+    },
+    "tray": {
+      "icon-size": 18,
+      "spacing": 10,
+      "tooltip": false
+    },
+    "pulseaudio": {
+      "format": "{volume}% {icon} {format_source}",
+      "format-bluetooth": "{volume}%  {format_source}",
+      "format-bluetooth-muted": "󰅶  {format_source}",
+      "format-muted": "󰅶 {format_source}",
+      "format-source": "{volume}% ",
+      "format-source-muted": "",
+      "format-icons": {
+        "headphone": "",
+        "hands-free": "󰂑",
+        "headset": "󰂑",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": [
+          "",
+          "",
+          ""
+        ]
+      },
+      "on-click": "pavucontrol"
+    },
+
+"network": {
+  "interface": "eno1",
+  "format-ethernet": "󰌘",
+  "format-wifi": "{essid} ({signalStrength}%) ",
+  "format-disconnected": "󰅛",
+  "tooltip-format-ethernet": "{ifname} ",
+  "tooltip-format-disconnected": "Disconnected"
+},
+
+"network#vpn": {
+  "interface": "ipv6leak*", // Si Waybar no hace match, usa un regex o el nombre exacto de la interfaz activa
+  "format": "VPN 󰒘 ",
+  "format-disconnected": "",
+  "tooltip-format": " VPN {ifname}",
+  "interval": 2
+},
+
+    "cpu": {
+      "interval": 10,
+      "format": "{usage:>2}%   ",
+      "max-length": 10,
+      "on-click": "kitty btop"
+    },
+    "memory": {
+      "interval": 30,
+      "format": "{}%  ",
+      "max-length": 10,
+      "on-click": "kitty btop"
+    },
+    "custom/bar": {
+      "format": "|",
+      "tooltip": false,
+      "max-length": 10
+    },
+    "custom/notification": {
+      "tooltip": true,
+      "format": "{0} {icon}",
+      "format-icons": {
+        "notification": "󱅫 ",
+        "none": "󰂜 ",
+        "dnd-notification": "󰂠",
+        "dnd-none": "󰪓",
+        "inhibited-notification": "󰂛",
+        "inhibited-none": "󰪑",
+        "dnd-inhibited-notification": "󰂛",
+        "dnd-inhibited-none": "󰪑"
+      },
+      "return-type": "json",
+      "exec-if": "which swaync-client",
+      "exec": "swaync-client -swb",
+      "on-click": "swaync-client -t -sw",
+      "on-click-right": "swaync-client -d -sw",
+      "escape": true
+    },
+"mpris": {
+  "format": "{player_icon} {artist} - {title}",
+  "format-paused": "{player_icon} {artist} - {title}  ",
+  "player-icons": {
+    "default": "🎵",
+    "spotify": "",
+    "firefox": "󰈹",
+    "mpv": "🎬"
+  },
+  "status-icons": {
+    "paused": "⏸"
+  },
+  "on-click": "playerctl play-pause",
+  "on-click-right": "playerctl next",
+  "on-click-middle": "playerctl -a play-pause",
+  "tooltip": false,
+  "title-len": 25,
+  "artist-len": 25
+}
+  },
+  // ------ BARRA SECUNDARIA VERTICAL (HDMI-A-1) -----
+  {
+    "output": [
+      "HDMI-A-1"
+    ],
+    "layer": "top",
+    "position": "top",
+    "height": 20,
+    "reload_style_on_change": true,
+    // ---Módulos reducidos para no saturar la pantalla vertical---
+    "modules-left": [
+      "hyprland/workspaces"
+    ],
+    "modules-center": [
+      "clock"
+    ],
+    "modules-right": [
+      "mpris",
+      "custom/bar",
+      "pulseaudio",
+      "custom/bar"
+    ],
+    // --- Módulos Barra Secundaria ---
+    "hyprland/workspaces": {
+      "format": " {name} ",
+      "persistent-workspaces": {
+        /*"*": [5,6,7],*/
+        "HDMI-A-1": [
+          4,
+          5,
+          6
+        ]
+      }
+    },
+    "clock": {
+      "format": "{:%H:%M   %d/%m/%Y}"
+    },
+    "pulseaudio": {
+      "format": "{volume}% {icon}",
+      "format-muted": "󰅶",
+      "format-icons": {
+        "default": [
+          "",
+          "",
+          ""
+        ]
+      },
+      "on-click": "pavucontrol"
+    },
+    "custom/bar": {
+      "format": "|",
+      "tooltip": false
+    },
+    "mpris": {
+      "player": "spotify",
+      "format": "{artist} - {title}  ",
+      "format-paused": "{artist} - {title}  ",
+      "tooltip": false,
+      "title-len": 25,
+      "artist-len": 25
+    }
+  }
+]

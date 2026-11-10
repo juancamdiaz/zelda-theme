@@ -1,0 +1,15 @@
+@import 'themes/zeldatheme.css';
+
+* {
+    border: none;
+    border-radius: 0px;
+
+    /*font-family: "JetBrainsMono Nerd Font", "Agave Nerd Font", "FontAwesome";
+    font-size: 17px;
+    font-weight: bold;*/
+    padding: 0px;
+    margin: 0px;
+
+    min-height: 25px;
+}
+
