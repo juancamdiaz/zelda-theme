@@ -1,4 +1,5 @@
 # zelda-theme
 Hyprland zelda rice
 
-![Captura de pantalla](wallhaven-og7xg7.png)
+![Captura de pantalla](Screenshot1.jpeg)
+![Captura de pantalla](Screenshot2.jpeg)
