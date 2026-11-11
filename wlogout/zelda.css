@@ -1,10 +1,14 @@
+
+
 * {
 	background-image: none;
 	box-shadow: none;
+		font-size: 40px;
+	font-family: "Departure Mono", "ProFont IIx Nerd Font Propo";
 }
 
 window {
-	background-color: rgba(83, 111, 80, 0.3);
+	background-color: rgba(84, 42, 19, 0.5);
 }
 
 button {
@@ -14,56 +18,45 @@ button {
 	margin: 20px;
 	text-decoration-color: #FFFFFF;
 	color: #E0D6A4;
-	background-color: #536F50;
+	background-color: rgba(83, 111, 80, 0.95);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 25%;
 }
 
-button:focus,
-button:active{
-	background-color: #55313b;
+button:hover {
+	background-color: rgba(74, 102, 71, 0.95);
 	outline-style: none;
-	border-color: #C49F21;
+	border-color: rgba(196, 159, 33, 0.95);
 }
 
-button:hover {
-	background-color: #BF8462;
-	outline-style: none;
-	border-color: #C49F21;
+button:focus,
+button:active {
+    background-color: rgba(191, 132, 98, 0.95);
+    outline-style: none;
+    border-color: rgba(196, 159, 33, 0.95);
 }
 
 #lock {
-    background-image: image(url("img/7mzepkfpah6g1.png"), url("img/7mzepkfpah6g1.png"));
+    background-image: url("img/7mzepkfpah6g1.png");
 }
 
 #logout {
-	background-image: image(url("img/178-1784297_zelda-triforce-zelda-pixel-art.png"), url("img/178-1784297_zelda-triforce-zelda-pixel-art.png"));
+	background-image: url("img/178-1784297_zelda-triforce-zelda-pixel-art.png");
 }
 
 #suspend {
-    background-image: image(url("img/83801-art-of-character-zelda-fictional-pixel-breath.png"), url("img/83801-art-of-character-zelda-fictional-pixel-breath.png"));
+    background-image: url("img/83801-art-of-character-zelda-fictional-pixel-breath.png");
 }
 
 #hibernate {
-    background-image: image(url("img/89faa3e3bb82d58.png"), url("img/89faa3e3bb82d58.png"));
+    background-image: url("img/89faa3e3bb82d58.png");
 }
 
 #shutdown {
-    background-image: image(url("img/sr2d5738419a2aws3.png"), url("img/sr2d5738419a2aws3.png"));
+    background-image: url("img/sr2d5738419a2aws3.png");
 }
 
 #reboot {
-    background-image: image(url("img/49ffad463a19d23.png"), url("img/49ffad463a19d23.png"));
-}
-
-
-#lock,
-#logout,
-#suspend,
-#hibernate,
-#shutdown,
-#reboot {
-	font-size: 40px;
-	font-family: "Departure Mono", "ProFont IIx Nerd Font Propo";
+    background-image: url("img/49ffad463a19d23.png");
 }
