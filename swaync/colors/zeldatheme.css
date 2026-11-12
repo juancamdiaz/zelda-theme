@@ -1,0 +1,201 @@
+/* comentario */
+@import "colors/frappe.css";
+
+@define-color greenbase #5b7b22;
+@define-color green #536F50;
+@define-color text white;
+@define-color text1 #1b0f08;
+@define-color text2 #FCEBB1;
+@define-color brown0 #30190d;
+@define-color brown1 #55313b;
+@define-color brown2 #90502b;
+@define-color brown3 #BF8462;
+@define-color gold #C49F21;
+@define-color gold1 #E0D6A4;
+
+* {
+  font-family: "Departure Mono", "ProFont IIx Nerd Font Propo";
+  font-size: 14px;
+  padding: 0px;
+}
+
+#waybar {}
+
+window#waybar {
+  /*background: linear-gradient(0deg, alpha(@bg0, 0) 10%, alpha(@bg1, 0.8) 100%);*/
+  background-color: rgba(83, 111, 80, 1);
+  background-image: linear-gradient(rgba(83, 111, 80, 1), rgba(83, 111, 80, 0.6)), url("Img/zelda/trifuerza.png");
+  background-repeat: repeat;
+  /* Repite la imagen horizontal y verticalmente para crear el patrón */
+  background-size: 24px 24px;
+  border-bottom: 2px solid @gold;
+  color: @text2;
+}
+
+tooltip {
+  background-color: @gold1;
+  color: @brown0;
+  border-radius: 0px;
+  padding: 2px;
+  text-shadow: none;
+}
+
+#clock,
+#window,
+#pulseaudio,
+#hardware,
+#tray,
+#mpris,
+#custom-notification {
+  min-height: 0px;
+  padding: 0px 10px;
+  margin: 3px 0px 5px 0px;
+  border: 2px solid @gold;
+}
+
+#clock,
+#window,
+#pulseaudio,
+#custom-notification,
+#tray,
+#hardware {
+  border-radius: 0px;
+  background-color: @brown1;
+}
+
+#clock {
+  border-radius: 0px;
+  background-color: @brown1;
+  color: @text2;
+}
+
+#custom-notification {
+  margin: 3px 8px 5px 0px;
+}
+
+#window {
+  opacity: 0.7;
+}
+
+
+/* --- WORKSPACES --- */
+
+#workspaces {
+  min-height: 0px;
+  background-color: @brown1;
+  color: @lavender;
+  border-radius: 0px;
+  opacity: 1;
+  margin: 3px 8px 5px 8px;
+  padding: 1px 1px;
+  border: 2px solid @gold;
+  background-position: center center;
+}
+
+#workspaces button {
+  min-height: 0px;
+  padding: 0px 10px;
+  margin: 2px 2px;
+  background-image: url("Img/zelda/zelda.png");
+  background-repeat: no-repeat;
+  background-size: 22px;
+  background-color: @brown2;
+  color: transparent;
+  border-radius: 0px;
+  transition: all 0.3s ease-in-out;
+  min-width: 25px;
+}
+
+#workspaces button.active {
+  background-color: @gold;
+  background-image: url("Img/zelda/link.png");
+  background-repeat: no-repeat;
+  background-size: 45px;
+  color: transparent;
+  border-radius: 0px;
+  min-width: 60px;
+}
+
+#workspaces button:hover {
+  background-color: @brown3;
+  color: transparent;
+  min-width: 40px;
+}
+
+#workspaces button.urgent {
+  background-color: @red;
+  color: @lavender;
+  min-width: 40px;
+}
+
+/* 1. Definimos la animación de colores */
+@keyframes colorPulse {
+  0% {
+    color: @brown1;
+  }
+
+  50% {
+    color: @brown2;
+  }
+
+  100% {
+    color: @brown1;
+  }
+}
+
+#mpris.playing {
+  animation-name: colorPulse;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  background-color: @gold;
+  border-radius: 0px;
+  opacity: 1;
+  border: 2px solid @brown1;
+}
+
+#mpris.paused,
+#mpris.stopped {
+  color: @mantle;
+  background-color: @gold1;
+  border-radius: 0px;
+  opacity: 0.7;
+  border: 2px solid @brown1;
+}
+
+#custom-bar {
+  color: transparent;
+  margin: 0;
+  font-size: 15px;
+}
+
+/* Target direct a la estructura del calendario de Waybar */
+#clock table {
+  background-color: @gold1;
+  background-image: url("Img/zelda/zelda.png");
+}
+
+#clock table header {
+  color: @gold;
+  font-weight: bold;
+}
+
+#clock table label {
+  color: @text;
+}
+
+/* Días de la semana y semanas */
+#clock table .header {
+  color: @gold;
+}
+
+#clock table .week {
+  color: @subtext0;
+}
+
+/* Día actual resaltado */
+#clock table .today {
+  color: @red;
+  background-color: @surface0;
+  border-radius: 4px;
+}
