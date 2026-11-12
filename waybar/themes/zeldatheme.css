@@ -48,12 +48,12 @@ tooltip {
 #tray,
 #hardware {
   border-radius: 0px;
-  background-color: @b1;
+  background-color: alpha(@br0, .9);
 }
 
 #clock {
   border-radius: 0px;
-  background-color: @b1;
+  background-color: alpha(@br0, .9);
   color: @gold-l;
 }
 
@@ -70,7 +70,7 @@ tooltip {
 
 #workspaces {
   min-height: 0px;
-  background-color: @b1;
+  background-color: alpha(@br0, .9);
   color: @gold-l;
   border-radius: 0px;
   opacity: 1;
@@ -105,7 +105,7 @@ tooltip {
 }
 
 #workspaces button:hover {
-  background-color: @bg3;
+  background-color: alpha(@br0, .9);
   color: transparent;
   min-width: 40px;
 }
@@ -119,15 +119,15 @@ tooltip {
 /* 1. Definimos la animación de colores */
 @keyframes colorPulse {
   0% {
-    color: @b1;
+    color: @br0;
   }
 
   50% {
-    color: @b2;
+    color: @br3;
   }
 
   100% {
-    color: @b1;
+    color: @br0;
   }
 }
 
