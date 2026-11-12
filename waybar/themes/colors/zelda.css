@@ -1,14 +1,19 @@
 @define-color text      #1A0600;
 @define-color text-alt  #C6E6C3;
 
-@define-color bg0       #4C664A;
-@define-color bg0       #5F805D;
-@define-color bg1       #72996F;
-@define-color bg2       #85B382;
+@define-color bg0       #516649;
+@define-color bg1       #66805b;
+@define-color bg2       #7A996D;
+@define-color bg3       #8EB37F;
 
 @define-color b0        #1A0D07;
 @define-color b1        #66351C;
 @define-color b2        #804223;
+
+@define-color br0       #400A02;
+@define-color br1       #590F02;
+@define-color br2       #741303;
+@define-color br3       #8C1704;
 
 @define-color red       #FF3636;
 @define-color blue      #1F75FF;
