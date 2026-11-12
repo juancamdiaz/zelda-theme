@@ -1,0 +1,29 @@
+@define-color bg0       #474D44;
+@define-color bg1       #66805B;
+@define-color bg2       #B4E69E;
+@define-color bg3       #A4FF7D;
+
+@define-color br0       #40160F;
+@define-color br1       #741303;
+@define-color br2       #D9705D;
+@define-color br3       #FFAFA1;
+
+
+@define-color red       #FF3636;
+@define-color blue      #3647FF;
+@define-color yellow    #FFD436;
+@define-color green     #36FF6F;
+
+@define-color gold      #D9BA2B;
+@define-color gold-l    #FFF59E;
+
+@define-color textr      #1A0600;
+@define-color textb      #00051A;
+@define-color textg      #0C1A00;
+
+
+@define-color text-alt  #C6E6C3;
+
+@define-color b0        #1A0D07;
+@define-color b1        #66351C;
+@define-color b2        #804223;
