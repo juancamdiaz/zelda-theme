@@ -1,17 +1,5 @@
 /* comentario */
-@import "colors/frappe.css";
-
-@define-color greenbase #5b7b22;
-@define-color green #536F50;
-@define-color text white;
-@define-color text1 #1b0f08;
-@define-color text2 #FCEBB1;
-@define-color brown0 #30190d;
-@define-color brown1 #55313b;
-@define-color brown2 #90502b;
-@define-color brown3 #BF8462;
-@define-color gold #C49F21;
-@define-color gold1 #E0D6A4;
+@import "colors/zelda.css";
 
 * {
   font-family: "Departure Mono", "ProFont IIx Nerd Font Propo";
@@ -33,8 +21,8 @@ window#waybar {
 }
 
 tooltip {
-  background-color: @gold1;
-  color: @brown0;
+  background-color: @gold-l;
+  color: @text;
   border-radius: 0px;
   padding: 2px;
   text-shadow: none;
@@ -60,13 +48,13 @@ tooltip {
 #tray,
 #hardware {
   border-radius: 0px;
-  background-color: @brown1;
+  background-color: @b1;
 }
 
 #clock {
   border-radius: 0px;
-  background-color: @brown1;
-  color: @text2;
+  background-color: @b1;
+  color: @gold-l;
 }
 
 #custom-notification {
@@ -82,8 +70,8 @@ tooltip {
 
 #workspaces {
   min-height: 0px;
-  background-color: @brown1;
-  color: @lavender;
+  background-color: @b1;
+  color: @gold-l;
   border-radius: 0px;
   opacity: 1;
   margin: 3px 8px 5px 8px;
@@ -99,7 +87,7 @@ tooltip {
   background-image: url("Img/zelda/zelda.png");
   background-repeat: no-repeat;
   background-size: 22px;
-  background-color: @brown2;
+  background-color: @b2;
   color: transparent;
   border-radius: 0px;
   transition: all 0.3s ease-in-out;
@@ -117,29 +105,29 @@ tooltip {
 }
 
 #workspaces button:hover {
-  background-color: @brown3;
+  background-color: @bg3;
   color: transparent;
   min-width: 40px;
 }
 
 #workspaces button.urgent {
   background-color: @red;
-  color: @lavender;
+  color: @gold-l;
   min-width: 40px;
 }
 
 /* 1. Definimos la animación de colores */
 @keyframes colorPulse {
   0% {
-    color: @brown1;
+    color: @b1;
   }
 
   50% {
-    color: @brown2;
+    color: @b2;
   }
 
   100% {
-    color: @brown1;
+    color: @b1;
   }
 }
 
@@ -151,16 +139,16 @@ tooltip {
   background-color: @gold;
   border-radius: 0px;
   opacity: 1;
-  border: 2px solid @brown1;
+  border: 2px solid @b1;
 }
 
 #mpris.paused,
 #mpris.stopped {
-  color: @mantle;
-  background-color: @gold1;
+  color: @b2;
+  background-color: @gold-l;
   border-radius: 0px;
   opacity: 0.7;
-  border: 2px solid @brown1;
+  border: 2px solid @b1;
 }
 
 #custom-bar {
@@ -171,7 +159,7 @@ tooltip {
 
 /* Target direct a la estructura del calendario de Waybar */
 #clock table {
-  background-color: @gold1;
+  background-color: @gold-l;
   background-image: url("Img/zelda/zelda.png");
 }
 
@@ -190,12 +178,12 @@ tooltip {
 }
 
 #clock table .week {
-  color: @subtext0;
+  color: @b0;
 }
 
 /* Día actual resaltado */
 #clock table .today {
   color: @red;
-  background-color: @surface0;
+  background-color: @b2;
   border-radius: 4px;
 }
