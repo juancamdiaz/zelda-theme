@@ -1,12 +1,14 @@
 [
+  // ==========================================
   // ------ BARRA PRINCIPAL (DP-1) ------
+  // ==========================================
   {
     "output": [
       "DP-1"
     ],
     "layer": "top",
     "position": "top",
-    "height": 20,
+    "height": 32,
     "reload_style_on_change": true,
     "modules-left": [
       "hyprland/workspaces",
@@ -31,16 +33,16 @@
       "modules": [
         "network",
         "custom/bar",
-        "network#vpn",
+        "custom/vpn",
         "cpu",
         "memory"
       ]
     },
+
     // --- Módulos Barra Principal ---
     "hyprland/workspaces": {
       "format": " {name} ",
       "persistent-workspaces": {
-        /*"*": [2,3,4,5,6,7],*/
         "DP-1": [
           1,
           2,
@@ -48,8 +50,6 @@
         ]
       }
     },
-    
-    
     "clock": {
       "format": "{:%H:%M}",
       "format-alt": "{:%A, %B %d, %Y (%R)} 󰃰 ",
@@ -111,130 +111,124 @@
       "tooltip-format-ethernet": "{ifname} ",
       "tooltip-format-disconnected": "Disconnected"
     },
-    "network#vpn": {
-      "interface": "ipv6leak*", // Si Waybar no hace match, usa un regex o el nombre exacto de la interfaz activa
-      "format": "VPN 󰒘 ",
-      "format-disconnected": "",
-      "tooltip-format": " VPN {ifname}",
-      "interval": 2
-    },
-    "cpu": {
-      "interval": 10,
-      "format": "{usage:>2}%   ",
-      "max-length": 10,
-      "on-click": "kitty btop"
-    },
-    "memory": {
-      "interval": 30,
-      "format": "{}%  ",
-      "max-length": 10,
-      "on-click": "kitty btop"
-    },
-    "custom/bar": {
-      "format": "|",
-      "tooltip": false,
-      "max-length": 10
-    },
-    "custom/notification": {
-      "tooltip": true,
-      "format": "{0} {icon}",
-      "format-icons": {
-        "notification": "󱅫 ",
-        "none": "󰂜 ",
-        "dnd-notification": "󰂠",
-        "dnd-none": "󰪓",
-        "inhibited-notification": "󰂛",
-        "inhibited-none": "󰪑",
-        "dnd-inhibited-notification": "󰂛",
-        "dnd-inhibited-none": "󰪑"
-      },
-      "return-type": "json",
-      "exec-if": "which swaync-client",
-      "exec": "swaync-client -swb",
-      "on-click": "swaync-client -t -sw",
-      "on-click-right": "swaync-client -d -sw",
-      "escape": true
-    },
-    "mpris": {
-      "format": "{player_icon} {artist} - {title}",
-      "format-paused": "{player_icon} {artist} - {title}  ",
-      "player-icons": {
-        "default": "🎵",
-        "spotify": "",
-        "firefox": "󰈹",
-        "mpv": "🎬"
-      },
-      "status-icons": {
-        "paused": "⏸"
-      },
-      "on-click": "playerctl play-pause",
-      "on-click-right": "playerctl next",
-      "on-click-middle": "playerctl -a play-pause",
-      "tooltip": false,
-      "title-len": 25,
-      "artist-len": 25
-    }
-  },
-  // ------ BARRA SECUNDARIA VERTICAL (HDMI-A-1) -----
-  {
-    "output": [
-      "HDMI-A-1"
-    ],
-    "layer": "top",
-    "position": "top",
-    "height": 20,
-    "reload_style_on_change": true,
-    // ---Módulos reducidos para no saturar la pantalla vertical---
-    "modules-left": [
-      "hyprland/workspaces"
-    ],
-    "modules-center": [
-      "clock"
-    ],
-    "modules-right": [
-      "mpris",
-      "custom/bar",
-      "pulseaudio",
-      "custom/notification"
-    ],
-    // --- Módulos Barra Secundaria ---
-    "hyprland/workspaces": {
-      "format": " {name} ",
-      "persistent-workspaces": {
-        /*"*": [5,6,7],*/
-        "HDMI-A-1": [
-          4,
-          5,
-          6
-        ]
-      }
-    },
-    "clock": {
-      "format": "{:%H:%M   %d/%m/%Y}"
-    },
-    "pulseaudio": {
-      "format": "{volume}% {icon}",
-      "format-muted": "󰅶",
-      "format-icons": {
-        "default": [
-          "",
-          "",
-          ""
-        ]
-      },
-      "on-click": "pavucontrol"
-    },
-    "custom/bar": {
-      "format": "|",
+    "custom/vpn": {
+      "exec": "ip -brief link | grep -qE '^(proton|wg|tun|mullvad|surfshark)' && echo 'VPN 󰒘' || echo ''",
+      "interval": 2,
       "tooltip": false
     },
-    "mpris": {
-      "player": "spotify",
-      "format": "{artist} - {title}  ",
-      "format-paused": "{artist} - {title}  ",
-      "tooltip": false,
-      "title-len": 25,
-      "artist-len": 25
-    }
+  "cpu": {
+    "interval": 10,
+    "format": "{usage:>2}%   ",
+    "max-length": 10,
+    "on-click": "kitty btop"
+  },
+  "memory": {
+    "interval": 30,
+    "format": "{}%  ",
+    "max-length": 10,
+    "on-click": "kitty btop"
+  },
+  "custom/bar": {
+    "format": "|",
+    "tooltip": false,
+    "max-length": 10
+  },
+  "custom/notification": {
+    "tooltip": true,
+    "format": "{0} {icon}",
+    "format-icons": {
+      "notification": "󱅫 ",
+      "none": "󰂜 ",
+      "dnd-notification": "󰂠",
+      "dnd-none": "󰪓",
+      "inhibited-notification": "󰂛",
+      "inhibited-none": "󰪑",
+      "dnd-inhibited-notification": "󰂛",
+      "dnd-inhibited-none": "󰪑"
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
+  "mpris": {
+    "format": "{player_icon} {artist} - {title}",
+    "format-paused": "{player_icon} {artist} - {title}  ",
+    "player-icons": {
+      "default": "🎵",
+      "spotify": "",
+      "firefox": "󰈹",
+      "mpv": "🎬"
+    },
+    "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl next",
+    "on-click-middle": "playerctl -a play-pause",
+    "tooltip": false,
+    "title-len": 25,
+    "artist-len": 25
   }
+},
+// ==========================================
+// ------ BARRA SECUNDARIA VERTICAL (HDMI-A-1) -----
+// ==========================================
+{
+  "output": [
+    "HDMI-A-1"
+  ],
+  "layer": "top",
+  "position": "top",
+  "height": 32,
+  "modules-left": [
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "mpris",
+    "custom/bar",
+    "pulseaudio",
+    "custom/bar"
+  ],
+  // --- Módulos Barra Secundaria ---
+  "hyprland/workspaces": {
+    "format": " {name} ",
+    "persistent-workspaces": {
+      "HDMI-A-1": [
+        4,
+        5,
+        6
+      ]
+    }
+  },
+  "clock": {
+    "format": "{:%H:%M   %d/%m/%Y}"
+  },
+  "pulseaudio": {
+    "format": "{volume}% {icon}",
+    "format-muted": "󰅶",
+    "format-icons": {
+      "default": [
+        "",
+        "",
+        ""
+      ]
+    },
+    "on-click": "pavucontrol"
+  },
+  "custom/bar": {
+    "format": "|",
+    "tooltip": false
+  },
+  "mpris": {
+    "player": "spotify",
+    "format": "{artist} - {title}  ",
+    "format-paused": "{artist} - {title}  ",
+    "tooltip": false,
+    "title-len": 25,
+    "artist-len": 25
+  }
+}
 ]
