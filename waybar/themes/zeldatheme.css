@@ -4,6 +4,7 @@
   font-family: "Departure Mono", "ProFont IIx Nerd Font Propo";
   font-size: 14px;
   padding: 0px;
+  min-height: 23px;
 }
 
 window#waybar {
