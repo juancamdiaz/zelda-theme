@@ -48,6 +48,8 @@
         ]
       }
     },
+    
+    
     "clock": {
       "format": "{:%H:%M}",
       "format-alt": "{:%A, %B %d, %Y (%R)} 󰃰 ",
@@ -101,24 +103,21 @@
       },
       "on-click": "pavucontrol"
     },
-
-"network": {
-  "interface": "eno1",
-  "format-ethernet": "󰌘",
-  "format-wifi": "{essid} ({signalStrength}%) ",
-  "format-disconnected": "󰅛",
-  "tooltip-format-ethernet": "{ifname} ",
-  "tooltip-format-disconnected": "Disconnected"
-},
-
-"network#vpn": {
-  "interface": "ipv6leak*", // Si Waybar no hace match, usa un regex o el nombre exacto de la interfaz activa
-  "format": "VPN 󰒘 ",
-  "format-disconnected": "",
-  "tooltip-format": " VPN {ifname}",
-  "interval": 2
-},
-
+    "network": {
+      "interface": "eno1",
+      "format-ethernet": "󰌘",
+      "format-wifi": "{essid} ({signalStrength}%) ",
+      "format-disconnected": "󰅛",
+      "tooltip-format-ethernet": "{ifname} ",
+      "tooltip-format-disconnected": "Disconnected"
+    },
+    "network#vpn": {
+      "interface": "ipv6leak*", // Si Waybar no hace match, usa un regex o el nombre exacto de la interfaz activa
+      "format": "VPN 󰒘 ",
+      "format-disconnected": "",
+      "tooltip-format": " VPN {ifname}",
+      "interval": 2
+    },
     "cpu": {
       "interval": 10,
       "format": "{usage:>2}%   ",
@@ -156,25 +155,25 @@
       "on-click-right": "swaync-client -d -sw",
       "escape": true
     },
-"mpris": {
-  "format": "{player_icon} {artist} - {title}",
-  "format-paused": "{player_icon} {artist} - {title}  ",
-  "player-icons": {
-    "default": "🎵",
-    "spotify": "",
-    "firefox": "󰈹",
-    "mpv": "🎬"
-  },
-  "status-icons": {
-    "paused": "⏸"
-  },
-  "on-click": "playerctl play-pause",
-  "on-click-right": "playerctl next",
-  "on-click-middle": "playerctl -a play-pause",
-  "tooltip": false,
-  "title-len": 25,
-  "artist-len": 25
-}
+    "mpris": {
+      "format": "{player_icon} {artist} - {title}",
+      "format-paused": "{player_icon} {artist} - {title}  ",
+      "player-icons": {
+        "default": "🎵",
+        "spotify": "",
+        "firefox": "󰈹",
+        "mpv": "🎬"
+      },
+      "status-icons": {
+        "paused": "⏸"
+      },
+      "on-click": "playerctl play-pause",
+      "on-click-right": "playerctl next",
+      "on-click-middle": "playerctl -a play-pause",
+      "tooltip": false,
+      "title-len": 25,
+      "artist-len": 25
+    }
   },
   // ------ BARRA SECUNDARIA VERTICAL (HDMI-A-1) -----
   {
@@ -196,7 +195,7 @@
       "mpris",
       "custom/bar",
       "pulseaudio",
-      "custom/bar"
+      "custom/notification"
     ],
     // --- Módulos Barra Secundaria ---
     "hyprland/workspaces": {
